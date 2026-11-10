@@ -6,6 +6,7 @@ public class Employee {
     private String department;
     private double payRate;
     private double hoursWorked;
+    private int startTime;
 
     public Employee(String employeeId, String name, String department, double payRate, double hoursWorked) {
         this.employeeId = employeeId;
@@ -14,6 +15,18 @@ public class Employee {
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
     }
+
+    //punchIn
+    public void punchIn(int time){
+        this.startTime = time;
+    }
+
+    //punchOut
+    public void punchOut(int time){
+        int workedHours = (time - startTime);
+        hoursWorked = hoursWorked + workedHours;
+    }
+
 
     public double getRegularHours() {
         if (hoursWorked > 40) {
