@@ -14,6 +14,29 @@ public class Employee {
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
     }
+
+    public double getRegularHours() {
+        if (hoursWorked > 40) {
+            return 40;
+        } else {
+            return hoursWorked;
+        }
+    }
+
+    public double getOvertimeHours() {
+        if (hoursWorked > 40) {
+            return hoursWorked - 40;
+        } else {
+            return 0;
+        }
+    }
+
+    public double getTotalPay() {
+        double regularPay = getRegularHours() * payRate;
+        double overtimePay = getOvertimeHours() * payRate * 1.5;
+
+        return regularPay + overtimePay;
+    }
     public String getName() {
         return name;
     }

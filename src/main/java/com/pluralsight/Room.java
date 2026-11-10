@@ -5,14 +5,15 @@ public class Room {
     private double price;
     private boolean occupied;
     private boolean dirty;
-    private boolean available;
 
-    public Room(int numberOfBeds, double price) {
+
+    public Room(int numberOfBeds, double price, boolean occupied, boolean dirty) {
         this.numberOfBeds = numberOfBeds;
         this.price = price;
-        this.occupied = false;
-        this.dirty  = false;
+        this.occupied = occupied;
+        this.dirty = dirty;
     }
+
     public boolean isAvailable() {
         if(dirty == false && occupied == false) {
             return true;
