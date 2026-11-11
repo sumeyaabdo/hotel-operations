@@ -22,7 +22,7 @@ public class Room {
     // CheckOut
     public void checkOut(){
         occupied = false;
-        dirty = true;
+        cleanRoom();
     }
 
     // CleanRoom
